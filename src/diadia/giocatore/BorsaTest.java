@@ -18,6 +18,10 @@ class BorsaTest {
 		assertTrue(b.addAttrezzo(chiave));
 	}
 	@Test
+	public void testAddAttrezzoMaggioreDieci() {
+		assertFalse(b.addAttrezzo(scala));
+	}
+	@Test
 	public void testGetAttrezzo() {
 		b.addAttrezzo(chiave);
 		assertEquals(chiave,b.getAttrezzo("chiave"));
@@ -32,7 +36,12 @@ class BorsaTest {
 		assertTrue(b.hasAttrezzo("martello"));
 	}
 	@Test
-	public void testAddAttrezzoMaggioreDieci() {
-		assertFalse(b.addAttrezzo(scala));
+	public void testHasAttrezzoInesistente() {
+	    assertFalse(b.hasAttrezzo("spada"));
+	}
+	@Test
+	public void testHasAttrezzoPesoModificato() {
+	    b.addAttrezzo(new Attrezzo("martello", 8));
+	    assertTrue(b.hasAttrezzo("martello"));
 	}
 }

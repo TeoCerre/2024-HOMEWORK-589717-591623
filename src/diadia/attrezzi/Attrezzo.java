@@ -8,9 +8,9 @@ import diadia.ambienti.Stanza;
  * del labirinto.
  * Ogni attrezzo ha un nome ed un peso.
  *
- * @author  docente di POO
+ * @author  docente di POO,Matteo Cerretani,Daniele Granato
  * @see Stanza
- * @version base
+ * @version 1.0
  */
 public class Attrezzo {
 

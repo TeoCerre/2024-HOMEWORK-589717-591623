@@ -16,10 +16,20 @@ class GiocatoreTest {
 		assertEquals(0,g.getCFU());
 	}
 	@Test
+	public void testSetCFUComePrima() {
+	    g.setCFU(20);
+	    assertEquals(20, g.getCFU());
+	}
+	@Test
 	public void testGetBorsaNotNull() {
 		assertNotNull(g.getBorsa());
 	}
-	
-	
-
+	@Test
+	public void testGetBorsaVuota() {
+	    assertTrue(g.getBorsa().isEmpty());
+	}
+	@Test
+	public void testGetBorsaEsistenteDopoCreazione() {
+	    assertNotNull(g.getBorsa());
+	}
 }

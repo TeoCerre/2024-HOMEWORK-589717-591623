@@ -1,5 +1,14 @@
 package diadia.ambienti;
 
+/**
+ * Classe Labirinto - un labirinto in un gioco di ruolo.
+ * Un labirinto contiene le stanze.
+ * Contiene la stanza vincente.
+ * @author Matteo Cerretani,Daniele Granato
+ * @see Stanza
+ * @version 1.0
+ */
+
 import diadia.attrezzi.Attrezzo;
 
 public class Labirinto {
@@ -43,15 +52,24 @@ public class Labirinto {
         stanzaCorrente = atrio;  
 		stanzaVincente = biblioteca;
     }
-
+    /**
+	 * Restituisce la stanza vincente
+	 * @return  stanza vincente
+	 */
 	public Stanza getStanzaVincente() {
 		return stanzaVincente;
 	}
-
+	/**
+	 * Permette di impostare la stanza corrente
+	 * @param stanzaCorrente
+	 */
 	public void setStanzaCorrente(Stanza stanzaCorrente) {
 		this.stanzaCorrente = stanzaCorrente;
 	}
-
+	/**
+	 * Restituisce la stanza corrente
+	 * @return stanza corrente
+	 */
 	public Stanza getStanzaCorrente() {
 		return this.stanzaCorrente;
 	}

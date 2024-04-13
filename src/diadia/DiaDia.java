@@ -11,10 +11,10 @@ import diadia.ambienti.Stanza;
  *
  * Questa e' la classe principale crea e istanzia tutte le altre
  *
- * @author  docente di POO 
+ * @author  docente di POO,Matteo Cerretani,Daniele Granato 
  *         (da un'idea di Michael Kolling and David J. Barnes) 
  *          
- * @version base
+ * @version 1.0
  */
 
 public class DiaDia {
@@ -116,7 +116,12 @@ public class DiaDia {
 		io.mostraMessaggio(partita.getLabirinto().getStanzaCorrente().getDescrizione());
 	}
 	
-	
+	/**
+	 * Cerca di prendere un attrezzo
+	 * se la stanza non ha attrezzi o se l'attrezzo cercato non è presente stampa un messaggio di errore
+	 * altrimenti se l'attrezzo è nella stanza aggiunge l'attrezzo nella borsa e ne stampa il contenuto
+	 * @param nomeAttrezzo
+	 */
 	private void prendi(String nomeAttrezzo) {
 	    if(nomeAttrezzo==null)
 	        io.mostraMessaggio("Quale attrezzo vuoi prendere ?");
@@ -128,10 +133,16 @@ public class DiaDia {
 	      } else {
 	          io.mostraMessaggio("Attrezzo inesistente");
 	      }
-	      }else io.mostraMessaggio("Non ci sono attrezzi nella stanza");
+	      }else
+	    	  io.mostraMessaggio("Non ci sono attrezzi nella stanza");
 	}
 
-	
+	/**
+	 * Cerca di posare un attrezzo
+	 * se la borssa è vuota o se l'attrezzo non è presente nella borsa stampa un messaggio di errore
+	 * altrimenti aggiunge l'attrezzo nella stanza corrente e lo rimuove dalla borsa stampandone il contenuto aggiornato
+	 * @param nomeAttrezzo
+	 */
 	private void posa(String nomeAttrezzo) {
 	    if(nomeAttrezzo==null)
 	        io.mostraMessaggio("Quale Attrezzo vuoi posare?");
@@ -143,7 +154,8 @@ public class DiaDia {
 	      } else {
 	          io.mostraMessaggio("Attrezzo inesistente");
 	      }
-	    } else io.mostraMessaggio("Borsa vuota");
+	    } else
+	    	io.mostraMessaggio("Borsa vuota");
 	}
 
 	/**

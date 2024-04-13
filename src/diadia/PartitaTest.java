@@ -10,14 +10,20 @@ class PartitaTest {
 	Partita p = new Partita();
 	Stanza s = new Stanza("Stanza");
 	@Test
-	public void testGetStanzaVincente() {
-		assertEquals("Biblioteca",p.getLabirinto().getStanzaVincente().getNome());
+	public void testVintaPartitaVinta() {
+	    p.getLabirinto().setStanzaCorrente(p.getLabirinto().getStanzaVincente());
+	    assertTrue(p.vinta());
 	}
 	@Test
-	public void testSetStanzaCorrente() {
-		p.getLabirinto().setStanzaCorrente(s);
-		assertEquals(s,p.getLabirinto().getStanzaCorrente());
-	}	
+	public void testVintaPartitaNonVinta() {
+	    assertFalse(p.vinta());
+	}
+	@Test
+	public void testVintaPartitaNonVintaAltraStanza() {
+	    Stanza stanza2 = new Stanza("Stanza 2");
+	    p.getLabirinto().setStanzaCorrente(stanza2);
+	    assertFalse(p.vinta());
+	}
 	@Test
 	public void testIsNotFinita() {
 		assertFalse(p.isFinita());

@@ -11,8 +11,8 @@ su cui si applica il comando.
 (Ad es. alla riga digitata dall'utente "vai nord"
 corrisponde un comando di nome "vai" e parametro "nord").
 *
-@author  docente di POO
-@version base
+@author  docente di POO,Matteo Cerretani,Daniele Granato
+@version 1.0
 */
 
 public class Comando {

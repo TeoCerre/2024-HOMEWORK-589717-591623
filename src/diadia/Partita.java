@@ -1,15 +1,15 @@
 package diadia;
 
 import diadia.ambienti.Labirinto;
-import diadia.ambienti.Stanza;
+
 import diadia.giocatore.Giocatore;
 
 /**
  * Questa classe modella una partita del gioco
  *
- * @author  docente di POO
- * @see Stanza
- * @version base
+ * @author  docente di POO,Matteo Cerretani,Daniele Granato
+ * @see Giocatore,Labirinto
+ * @version 1.0
  */
 
 public class Partita {
@@ -47,11 +47,17 @@ public class Partita {
 	public void setFinita() {
 		this.finita = true;
 	}
-	
+	/**
+	 * Ritorna il labirinto
+	 * @return labirinto
+	 */
 	public Labirinto getLabirinto() {
 		return this.lab;
 	}
-	
+	/**
+	 * Ritorna il giocatore
+	 * @return giocatore
+	 */
 	public Giocatore getGiocatore() {
 		return this.giocatore;
 	}

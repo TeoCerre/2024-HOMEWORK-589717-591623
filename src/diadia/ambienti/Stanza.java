@@ -8,9 +8,9 @@ import diadia.attrezzi.Attrezzo;
  * E' collegata ad altre stanze attraverso delle uscite.
  * Ogni uscita e' associata ad una direzione.
  * 
- * @author docente di POO 
+ * @author docente di POO,Matteo Cerretani,Daniele Granato
  * @see Attrezzo
- * @version base
+ * @version 1.0
 */
 
 public class Stanza {
@@ -74,7 +74,7 @@ public class Stanza {
     }
 
     /**
-     * Restituisce la nome della stanza.
+     * Restituisce il nome della stanza.
      * @return il nome della stanza
      */
     public String getNome() {
@@ -167,22 +167,27 @@ public class Stanza {
 
 	/**
 	 * Rimuove un attrezzo dalla stanza (ricerca in base al nome).
-	 * @param nomeAttrezzo
+	 * @param attrezzo
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
 	public boolean removeAttrezzo(String attrezzo) {
 	    for(int i=0;i<NUMERO_MASSIMO_ATTREZZI;i++) {
-	        if(attrezzo.equals(this.attrezzi[i].getNome())) {
+	        if(this.attrezzi[i]!= null && attrezzo.equals(this.attrezzi[i].getNome())) {
 	            this.attrezzi[i]=null;
-	            for(int j=i; j<NUMERO_MASSIMO_ATTREZZI-1;j++) this.attrezzi[j]=this.attrezzi[j+1];
+	            for(int j=i; j<NUMERO_MASSIMO_ATTREZZI-1;j++)
+	            	this.attrezzi[j]=this.attrezzi[j+1];
 	            this.numeroAttrezzi--;
-	            this.attrezzi[9]=null;
+	            this.attrezzi[NUMERO_MASSIMO_ATTREZZI - 1] = null;
 	            return true;
 	        }
 	    }
 	    return false;
 	}
-
+	
+	/**
+	 * Prende le possibili direzioni
+	 * @return stringa con tutte le direzioni possibili, vuota se non ce ne sono
+	 */
 	public String[] getDirezioni() {
 		String[] direzioni = new String[this.numeroStanzeAdiacenti];
 	    for(int i=0; i<this.numeroStanzeAdiacenti; i++)
